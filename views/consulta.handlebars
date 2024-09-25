@@ -1,0 +1,32 @@
+<div class="container">
+    <br>
+        <div class="d-flex justify-content-between container align-items-center">
+            <h1>Tela de Consulta</h1>
+            <a href="/cadastro" class="btn btn-secondary">Cadastrar novo</a>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Cidade</th>
+                    <th>Estado</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each cliente}}
+                    {{#dataValues}}
+                    <tr>
+                        <td>{{ nome }}</td>
+                        <td>{{ cidade }}</td>
+                        <td>{{ estado }}</td>
+                        <td>
+                            <a href="/editar/{{id}}" class="btn btn-primary">Editar</a>
+                            <a href="/excluir/{{id}}"class="btn btn-danger">Excluir</a>
+                        </td>
+                    </tr>
+                    {{/dataValues}}
+                {{/each}}
+            </tbody>
+        </table>
+</div>
